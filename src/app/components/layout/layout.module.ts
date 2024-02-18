@@ -10,6 +10,7 @@ import { InputTextModule } from 'primeng/inputtext';
 import { ButtonModule } from 'primeng/button';
 import { RippleModule } from 'primeng/ripple';
 import { StyleClassModule } from 'primeng/styleclass';
+import { CommonModule } from '@angular/common';
 
 @NgModule({
   declarations: [
@@ -24,6 +25,7 @@ import { StyleClassModule } from 'primeng/styleclass';
     ButtonModule,
     RippleModule,
     StyleClassModule,
+    CommonModule
   ],
   exports: [LayoutComponent]
 })
