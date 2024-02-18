@@ -5,15 +5,15 @@
   <!-- contenedor -->
   <div class="flex flex-wrap justify-center gap-5 sm:grid sm:grid-cols-2 md:grid-cols-12 bg-green-600 ">
   <!-- <div class=" bg-green-600 "> -->
-    <!-- <div class="bg-blue-500 w-full"><h1 class="text-center">Lista de productos</h1></div> -->
+    <div class="bg-blue-500 w-full"><h1 class="text-center">Lista de productos</h1></div>
     <!-- contenerdores hijos -->
     <div *ngFor="let product of apiResponse.products" class="bg-red-600 m-4 p-4 max-w-sm sm:col-span-3 sm:max-w-none md:col-span-6 lg:col-span-4">
-      <div class="w-[75px] mb-3 overflow-hidden rounded-2xl">
+      <div class="mb-3 overflow-hidden rounded-2xl">
         <img class="w-full" src="https://www.maahsa.com.py/storage/sku/don-onofre-bebidas-alimentos-ron-profesional-1-1-1684509239.png" alt="Ron">
       </div>
       <h2 class="text-center">{{ product.title }}</h2>
       <p class="text-center">{{ product.price }} usd</p>
-      <button (click)="addToCart(product.title, product.price )" type="button" class="btn btn-primary">Agregar al carrito</button>
+      <button (click)="addToCart(product.title, product.price )" pButton type="button" class="text-md">Agregar al carrito</button>
     </div>
 </div>
 </div>
