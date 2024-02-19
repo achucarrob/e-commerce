@@ -1,5 +1,4 @@
-<app-navbar></app-navbar>
-
+<app-navbar [cart]="cart" ></app-navbar>
 <!-- contenedor padre -->
 <div class="px-8">
   <!-- contenedor -->
@@ -9,7 +8,7 @@
   <div class="ml-8 grid">
     <div *ngFor="let product of apiResponse.products" class="m-4 p-4">
       <div class="mb-3 overflow-hidden rounded-2xl">
-        <img src="https://www.maahsa.com.py/storage/sku/don-onofre-bebidas-alimentos-ron-profesional-1-1-1684509239.png" alt="Ron" width="250px" height="250px">
+        <img src="{{ product.img }}" alt="Ron" width="250px" height="250px">
       </div>
       <div>
         <h2 class="text-center">{{ product.title }}</h2>
@@ -18,7 +17,7 @@
         <p class="text-center">{{ product.price }} usd</p>
       </div>
       <div class="flex justify-center mt-4">
-        <button (click)="addToCart(product.title, product.price)" pButton type="button" class="m-auto text-md">Agregar al carrito</button>
+        <button (click)="addToCart(product.title, product.price, product.img)" pButton type="button" class="m-auto text-md">Agregar al carrito</button>
       </div>
     </div>
   </div>
