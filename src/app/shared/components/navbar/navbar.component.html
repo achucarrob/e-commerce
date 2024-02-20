@@ -152,22 +152,26 @@
             </li>
             <li class="flex flex-auto lg:flex-initial justify-content-center">
 
-                <a pRipple pStyleClass="@next" enterClass="hidden" enterActiveClass="scalein" leaveToClass="hidden"
-                    leaveActiveClass="fadeout"
-                    class="p-ripple p-element text-900 font-medium inline-flex align-items-center cursor-pointer px-1 lg:px-3 hover:text-primary"><i
-                        pbadge="" class="p-element pi pi-shopping-cart text-xl p-overlay-badge"><span id="pr_id_9_badge"
-                            class="p-badge p-component p-badge-dot"></span></i><span class="hidden">Mi Carrito</span><span
-                        class="p-ink" style="height: 79px; width: 79px; top: -11.5px; left: -7.5px;"></span></a>
-                <div
-                    class="border-round surface-overlay p-4 shadow-2 absolute right-0 top-100 z-1 w-20rem origin-top hidden">
-                    <span class="text-900 font-medium mb-3 block">1 Item</span>
-                    <div class="flex align-items-center border-bottom-1 surface-border pb-3">
-                        <img src="https://blocks.primeng.org/assets/images/blocks/ecommerce/shoppingcart/shopping-cart-2-2.png"
-                            class="w-4rem flex-shrink-0 shadow-1">
-                        <div class="flex flex-column pl-3"><span class="text-900 font-medium mb-2">Prime
-                                Watch</span><span class="text-600 mb-2">Standard Size</span><span
-                                class="text-primary font-bold">$50.00</span></div>
-                    </div>
+              <a pRipple pStyleClass="@next" enterClass="hidden" enterActiveClass="scalein" leaveToClass="hidden" leaveActiveClass="fadeout" class="p-ripple p-element text-900 font-medium inline-flex align-items-center cursor-pointer px-1 lg:px-3 hover:text-primary">
+                <i pbadge="" class="p-element pi pi-shopping-cart text-xl p-overlay-badge">
+                    <span id="pr_id_9_badge" class="p-badge p-component p-badge-dot" *ngIf="mostrarBadge"></span>
+                </i>
+                <span class="hidden">Mi Carrito</span>
+                <span class="p-ink" style="height: 79px; width: 79px; top: -11.5px; left: -7.5px;"></span>
+            </a>
+
+                <div class="border-round surface-overlay p-4 shadow-2 absolute right-0 top-100 z-1 w-20rem origin-top hidden">
+                  <span class="text-900 font-medium mb-3 block">{{cart.length}} Item</span>
+                    <div *ngFor="let product of cart">
+                      <p>{{product.title}}</p>
+                      <div class="flex align-items-center border-bottom-1 surface-border pb-3">
+                        <img src="{{product.img}}"
+                        class="w-4rem flex-shrink-0 shadow-1">
+                        <div class="flex flex-column pl-3"><span class="text-900 font-medium mb-2">{{product.title}}</span>
+                          <span class="text-600 mb-2">Standard Size</span>
+                          <span class="text-primary font-bold">{{product.price}} Gs.</span></div>
+                        </div>
+                      </div>
                     <div class="flex pt-3">
                       <!-- <button pbutton="" pripple="" class="p-element p-ripple p-button-outlined mr-2 p-button p-component">View Cart<span class="p-ink"></span></button> -->
                       <button pbutton="" pripple="" class="p-element p-ripple ml-2 p-button p-component">Pagar<span class="p-ink"></span></button>
