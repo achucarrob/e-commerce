@@ -1,4 +1,5 @@
 import { Component} from '@angular/core';
+import { ProductService } from 'src/app/shared/components/services/product.service';
 
 @Component({
   selector: 'app-layout',
@@ -8,6 +9,17 @@ export class LayoutComponent {
   // @Input({required: true}) img:string = '';
   // @Input({required: true}) price:number = 0;
   // @Input({required: true}) title:string = '';
+
+  constructor( private productService: ProductService){
+
+  }
+
+  ngOnInit(){
+    this.productService.getDebt()
+      .subscribe(resp => {
+        console.log(resp)
+      })
+  }
 
   cart: any[] = [];
 
